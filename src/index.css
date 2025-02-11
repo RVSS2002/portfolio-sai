@@ -1,0 +1,531 @@
+Global Styles
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #121212;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 5%;
+}
+
+/* Smooth Transition for Color Changes */
+*,
+*:before,
+*:after {
+  transition: all 0.3s ease;
+}
+
+/* Navbar Styles */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #1F1F1F;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.Navbar:hover {
+  background-color: #333;
+}
+
+.NavbarLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.NavbarLinks a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+}
+
+.NavbarLinks a::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #FF5722;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.NavbarLinks a:hover::after {
+  width: 100%;
+}
+
+.NavbarLinks a:hover {
+  color: #FF5722;
+}
+
+/* Home Section */
+.HomePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #1F1F1F;
+  padding-top: 10%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.HomeText h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #FF5722;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.HomeText p {
+  font-size: 20px;
+  color: #e0e0e0;
+}
+
+.Avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-top: 40px;
+  transition: transform 0.3s ease;
+}
+
+.Avatar:hover {
+  transform: scale(1.1);
+}
+
+/* Skills Section */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin: 50px 0;
+  padding: 20px;
+}
+
+/* SkillBox Design */
+.SkillBox {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(45deg, #FF5722, #FFC107);
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+}
+
+/* Hover Effects */
+.SkillBox:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #FF5722, #FF9800);
+}
+
+/* Icon Inside SkillBox */
+.SkillBox .icon {
+  font-size: 60px;
+  transition: transform 0.3s ease;
+}
+
+.SkillBox:hover .icon {
+  transform: scale(1.2);
+}
+
+/* Skills Section Heading */
+.SkillsHeading {
+  font-size: 40px;
+  text-align: center;
+  margin: 50px 0;
+  color: #FF5722;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .SkillBox {
+    width: 150px;
+    height: 150px;
+    font-size: 30px;
+  }
+
+  .SkillBox .icon {
+    font-size: 50px;
+  }
+
+  .SkillsHeading {
+    font-size: 32px;
+  }
+}
+
+
+/* About Section */
+.AboutPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a237e, #1976d2); /* New gradient background */
+  padding: 80px 0;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+/* About Text Card */
+.AboutText {
+  width: 80%;
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background for readability */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+/* About Text Hover Effect */
+.AboutText:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Links within AboutText */
+.AboutText a {
+  color: #FF5722;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.AboutText a:hover {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+/* Heading for About Section */
+.AboutHeading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .AboutText {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .AboutHeading {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .AboutText {
+    width: 95%;
+    font-size: 16px;
+  }
+
+  .AboutHeading {
+    font-size: 26px;
+  }
+}
+
+
+/* Projects Section */
+.projectHeading {
+  font-size: 42px;
+  text-align: center;
+  color: #FF5722;
+  margin-top: 100px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* Flex container for project boxes */
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Project Box (Card style) */
+.projectBox {
+  width: 300px;
+  height: 350px;
+  background-color: #212121;
+  color: #e0e0e0;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.projectBox:hover {
+  transform: translateY(-10px);
+  background-color: #FF5722;
+  color: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Project Image */
+.projectPhoto {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.projectBox:hover .projectPhoto {
+  transform: scale(1.1);
+}
+
+/* Project Title */
+.projectTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.projectBox:hover .projectTitle {
+  color: #fff;
+}
+
+/* Project Description */
+.projectDescription {
+  font-size: 14px;
+  color: inherit;
+  line-height: 1.5;
+  height: 80px;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projectBox {
+    width: 250px;
+    height: 320px;
+  }
+
+  .projectHeading {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectBox {
+    width: 100%;
+    height: 300px;
+  }
+
+  .projectHeading {
+    font-size: 30px;
+  }
+}
+
+
+/* /* Footer */
+footer {
+  background-color: #212121; /* Darker background for a sleek look */
+  color: #e0e0e0;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 16px;
+  border-top: 3px solid #FF5722; /* Accent line for style */
+}
+
+footer a {
+  color: #FF5722;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Footer Content */
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .footer-content p {
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  footer {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  footer .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Hamburger {
+    display: block;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .Hamburger .bar {
+    background-color: #fff;
+    width: 30px;
+    height: 3px;
+    margin: 6px;
+    border-radius: 5px;
+  }
+
+  /* Adjust HomeText on smaller screens */
+  .HomeText h1 {
+    font-size: 32px;
+  }
+
+  /* Skills section adjusts for mobile */
+  .skills {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .SkillBox {
+    width: 150px;
+    height: 150px;
+    font-size: 40px;
+  }
+}
+
+
+/* Hamburger Menu */
+.HamburgerMenu {
+  display: none;
+  background-color: #212121; /* Dark background for a sleek look */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%); /* Initially off-screen */
+}
+
+.showMenu .HamburgerMenu {
+  display: flex;
+  transform: translateX(0); /* Slide-in effect */
+}
+
+.HamburgerMenu a {
+  font-size: 26px;
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 15px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.HamburgerMenu a:hover {
+  color: #FF5722;
+  transform: translateX(10px); /* Subtle hover effect */
+}
+
+/* Close Button */
+.HamburgerMenu .closeMenu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.HamburgerMenu .closeMenu:hover {
+  color: #FF5722;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Hamburger menu becomes visible on mobile */
+  .Hamburger {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+
+  .Hamburger .bar {
+    background-color: #fff;
+    width: 30px;
+    height: 3px;
+    margin: 6px;
+    border-radius: 5px;
+  }
+}
+
